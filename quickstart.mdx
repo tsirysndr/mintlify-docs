@@ -1,47 +1,79 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Quick start"
+description: "Get up and running with Rocksky in under 5 minutes."
+icon: "bolt"
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+Rocksky is a decentralized Last.fm alternative. It lets you automatically
+track your music listening ("scrobble") and publish it to your Bluesky / AT
+Protocol identity.
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+<Card title="rocksky.app" icon="arrow-up-right-from-square" href="https://rocksky.app" horizontal>
+  Sign in with Bluesky and start scrobbling.
+</Card>
 
-## Prerequisites
+## Option 1: Use the hosted version
 
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
+No server required — sign in and start scrobbling.
 
 <Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
+  <Step title="Sign in">
+    Go to [rocksky.app](https://rocksky.app) and click **Sign in with Bluesky**.
+    Log in with your Bluesky account (or create one).
   </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
+  <Step title="Connect your music sources">
+    Pick one or more sources below.
 
-    ```bash
-    your-cli init
-    ```
+    | Source            | How to connect                                        | Difficulty |
+    | ----------------- | ----------------------------------------------------- | ---------- |
+    | **Spotify**       | Connect from Settings                                 | Easy       |
+    | **Jellyfin**      | [Add Rocksky as a scrobbler](/integrations/jellyfin)  | Easy       |
+    | **Navidrome**     | [Configure Navidrome](/integrations/navidrome)        | Easy       |
+    | **Android**       | [Pano Scrobbler](/integrations/pano-scrobbler)        | Easy       |
+    | **Browser**       | Install the WebScrobbler extension                    | Easy       |
+    | **Kodi**          | [Install the Rocksky add-on](/integrations/kodi)      | Medium     |
+    | **Other players** | Any Last.fm or ListenBrainz-compatible scrobbler      | Easy       |
   </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
-
-    ```bash
-    your-cli start
-    ```
+  <Step title="Start listening">
+    Your plays appear on your profile and in the **Stories** feed within
+    seconds.
   </Step>
 </Steps>
 
-<Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
+## Option 2: Self-host Rocksky
 
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
-</Tip>
+For full control and privacy.
+
+**Prerequisites**
+
+- Docker + Docker Compose
+- Node.js or Bun (for development)
+
+```bash
+git clone https://tangled.org/@rocksky.app/rocksky
+cd rocksky
+# follow the self-hosting guide in the repo README
+```
+
+<Note>
+  A one-command setup is on the roadmap. In the meantime, the
+  [source repo](https://tangled.org/@rocksky.app/rocksky) is the canonical
+  starting point.
+</Note>
+
+## What next?
+
+<CardGroup cols={2}>
+  <Card title="Migrate from Last.fm" icon="right-from-bracket" href="/migrations/from-lastfm">
+    Repoint any Last.fm-compatible scrobbler at Rocksky.
+  </Card>
+  <Card title="Install the CLI" icon="terminal" href="/cli/overview">
+    `rocksky` is a CLI for scrobbling, stats, and managing API keys.
+  </Card>
+  <Card title="Talk to Rocksky from Claude" icon="robot" href="/integrations/claude-desktop">
+    Plug the MCP server into Claude Desktop.
+  </Card>
+  <Card title="Build on the API" icon="code" href="/sdks/overview">
+    SDKs for TypeScript, Python, Rust, Go, Ruby, Kotlin, Elixir, Clojure, and Gleam.
+  </Card>
+</CardGroup>

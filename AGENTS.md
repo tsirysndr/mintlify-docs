@@ -1,33 +1,32 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
-
-# Documentation project instructions
+# Rocksky docs — agent instructions
 
 ## About this project
 
-- This is a documentation site built on [Mintlify](https://mintlify.com)
+- Documentation site for [Rocksky](https://rocksky.app), built with [Mintlify](https://mintlify.com)
 - Pages are MDX files with YAML frontmatter
 - Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+- API endpoint pages are auto-generated from `api-reference/openapi.json` — do not hand-edit them
+- Run `mint dev` to preview locally
+- Run `mint broken-links` to validate internal links before opening a PR
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- Use **Rocksky** (capital R) when referring to the product
+- A **scrobble** is one recorded play. **Scrobbling** is the act of recording.
+- Refer to the social feed as the **Stories** feed
+- Bluesky / AT Protocol are separate; Rocksky is *not* affiliated with Bluesky
 
 ## Style preferences
 
-{/* Add any project-specific style rules below */}
-
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
+- Active voice, second person ("you")
+- Concise sentences — one idea per sentence
+- Sentence case for headings
 - Bold for UI elements: Click **Settings**
 - Code formatting for file names, commands, paths, and code references
+- No emojis unless explicitly requested
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- The **API reference** tab is generated from `openapi.json`. Don't add hand-written endpoint pages there.
+- SDK docs in `sdks/` should stay in sync with each SDK's README under `../sdk/<language>/`. When an SDK README changes, mirror the changes here.
+- Don't document internal/admin features that aren't user-facing.
